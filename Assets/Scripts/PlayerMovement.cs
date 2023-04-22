@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 16f;
+    private float vertical; 
+    private float speed = 14f;
+    //private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -23,9 +24,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //returns -1, 0, or 1 depending on the direction we are moving to the horiz/verti var
         horizontal = Input.GetAxisRaw("Horizontal");
-        //returns -1, 0, or 1 depending on the direction we are moving to the horiz var
+        vertical = Input.GetAxisRaw("Vertical"); 
 
+        /*
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
@@ -35,7 +38,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             // lets you jump higher by long holding jump, shorter/lower when tap jump
+            // assuming the math is that it slows down vertically when you are no longer pressing jump
         }
+        */
 
         Flip();
     }
@@ -43,14 +48,16 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        // set x component of rigidbody velocity = to our horizontal input multiplied by our speed value
+        rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
     }
 
+    /*
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         //creates an invisible circle at players feet, when it collides w ground layer we're allowed to jump
     }
+    */
 
     private void Flip()
     {
