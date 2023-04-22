@@ -15,8 +15,13 @@ public class ProjectileBehavior : MonoBehaviour
         if (time >= timeInBetweenShots)
         {
             time = 0.0f;
+            shoot();
             //Trigger the action
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
         }
+    }
+
+    void shoot()
+    {
+        Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
     }
 }
