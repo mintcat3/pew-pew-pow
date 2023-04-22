@@ -5,7 +5,6 @@ using UnityEngine;
 public class KrahsFacingDirection : MonoBehaviour
 {
     public GameObject player;
-    public Transform Krahs_transform;
     // Start is called before the first frame update
     void Start()
     {
