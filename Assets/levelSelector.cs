@@ -4,14 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class levelSelector : MonoBehaviour
 {
+    public int level;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void OpenScene()
     {
-        SceneManager.LoadScene("Level 1");
+
+        if (level == SelectionMenu.levelsBeaten + 1)
+        {
+             SceneManager.LoadScene("Level " + level.ToString());
+        }
+        else
+        {
+            SceneManager.LoadScene("Beat Prev Level");
+        }
     }
 }
