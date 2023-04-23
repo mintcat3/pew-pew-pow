@@ -59,6 +59,7 @@ public class playerBossCollision : MonoBehaviour
     public void playerDamage(float x)
     {
         playerHealth -= x;
+        SfxManager.sfxInstance.Audio.PlayOneShot(SfxManager.sfxInstance.DamageTaken);
 
     }
 
