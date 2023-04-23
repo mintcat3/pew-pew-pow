@@ -11,9 +11,10 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    public float ()
 
     //Shooting.cs is slightly modified from https://www.youtube.com/watch?v=-bkmPm_Besk
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class Shooting : MonoBehaviour
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-
+            
         }
     }
 }
