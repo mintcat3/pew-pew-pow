@@ -51,8 +51,17 @@ public class Shooting : MonoBehaviour
         if(Input.GetMouseButton(0) && canFire)
         {
             canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-            
+            GameObject bulletSpawn = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+        }
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach(GameObject bullet in bullets)
+        {
+            if(bullet.transform.position.x < -30 || bullet.transform.position.x > 30 || bullet.transform.position.y > 20 || bullet.transform.position.y < -20)
+            {
+                Destroy(bullet);
+            }
         }
     }
 }

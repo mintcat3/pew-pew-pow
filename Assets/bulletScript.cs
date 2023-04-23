@@ -8,6 +8,9 @@ public class bulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float speed;
+
+    //bulletScript.cs is from https://www.youtube.com/watch?v=-bkmPm_Besk
+
     // Start is called before the first frame update
     void Start()
     {
