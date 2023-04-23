@@ -19,6 +19,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        
     }
 
     // Update is called once per frame
@@ -60,6 +61,7 @@ public class Shooting : MonoBehaviour
         {
             if(bullet.transform.position.x < -30 || bullet.transform.position.x > 30 || bullet.transform.position.y > 20 || bullet.transform.position.y < -20)
             {
+                // GameObject.Find("krahs").GetComponent<KrahsHealth>().TakeDamage(1);
                 Destroy(bullet);
             }
         }
