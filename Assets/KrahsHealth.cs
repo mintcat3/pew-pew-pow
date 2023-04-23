@@ -31,12 +31,12 @@ public class KrahsHealth : MonoBehaviour
            
         }
     }
-    void Update()
-    {
-        if (health <= 0)
-        {
-             timeDeath += Time.deltaTime;
-        }
-        TakeDamage(1);
-    }
+    // void Update()
+    // {
+    //     if (health <= 0)
+    //     {
+    //          timeDeath += Time.deltaTime;
+    //     }
+    //     TakeDamage(1);
+    // }
 }
