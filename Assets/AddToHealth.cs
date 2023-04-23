@@ -13,7 +13,7 @@ public class AddToHealth : MonoBehaviour
         
     }
     
-    public void onTriggerEnter2D(Collider2D collision)
+    /*public void onTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
@@ -21,5 +21,5 @@ public class AddToHealth : MonoBehaviour
             Destroy(gameObject);
             GameObject.Find("Player").GetComponent<playerBossCollision>().AddHealth(10);
         }
-    }
+    }*/
 }
