@@ -123,6 +123,35 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &381751881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6886763519199065722, guid: 17a12a8166e3be5479ccdf510b52c1e3, type: 3}
+  m_PrefabInstance: {fileID: 6886763518089633739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &381751883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6886763519199065720, guid: 17a12a8166e3be5479ccdf510b52c1e3, type: 3}
+  m_PrefabInstance: {fileID: 6886763518089633739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381751881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &381751884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381751881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6629b01f22776eb45a2967b4f8ee1991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 381751883}
 --- !u!20 &1270691006 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6202393035356184851, guid: 97a8c7f7325bcb54599088a37ad7fa3e, type: 3}
@@ -402,6 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f860fcfc86405dd44bc00c39b87b1aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 10
+  healthBar: {fileID: 0}
 --- !u!1001 &6202393035352972690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +621,10 @@ PrefabInstance:
     - target: {fileID: 6886763519003848247, guid: 17a12a8166e3be5479ccdf510b52c1e3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886763519199065720, guid: 17a12a8166e3be5479ccdf510b52c1e3, type: 3}
+      propertyPath: m_Value
+      value: 83.8
       objectReference: {fileID: 0}
     - target: {fileID: 6886763519199065721, guid: 17a12a8166e3be5479ccdf510b52c1e3, type: 3}
       propertyPath: m_SizeDelta.x
