@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float vertical; 
     private float speed = 14f;
+    public static bool flipped;
     //private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
@@ -67,6 +68,15 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
+            if (localScale.x < 0)
+            {
+                flipped = true;
+            }
+            else
+            {
+                flipped = false;
+            }
+            
             transform.localScale = localScale;
         }
     }
