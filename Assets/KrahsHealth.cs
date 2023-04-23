@@ -9,18 +9,12 @@ public class KrahsHealth : MonoBehaviour
     private float timeDeath = 0f;
     public float timeBeforeDeath2 = 5f;
     // Start is called before the first frame update
-    
-    
-    void Start()
-    {
-        gameObject.GetComponent<ParticleSystem>().Stop();
-    }
-    
+
     public void TakeDamage(int Damage)
     {
         health -= Damage; 
         
-        if (health <= (1/4) * health)
+        if (health <= 25) //25% of the boss health
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
         }
@@ -29,7 +23,7 @@ public class KrahsHealth : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("isDead", true);
             gameObject.transform.localScale = new Vector3(5, -5, 0);
-            if (timeDeath >= timeBeforeDeath2)
+            if (timeDeath >= timeBeforeDeath2) 
             {
                 timeDeath = 0f;
                 Destroy(gameObject);
@@ -43,6 +37,9 @@ public class KrahsHealth : MonoBehaviour
         {
              timeDeath += Time.deltaTime;
         }
-        TakeDamage(1);
+        if (health >= 25)
+        {
+            TakeDamage(1);
+        }
     }
 }
