@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class SfxManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource Audio;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip DamageTaken;
+
+    public static SfxManager sfxInstance;
 }
