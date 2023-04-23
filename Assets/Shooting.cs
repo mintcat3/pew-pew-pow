@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
-    public float ()
+    public float time;
 
     //Shooting.cs is slightly modified from https://www.youtube.com/watch?v=-bkmPm_Besk
 
