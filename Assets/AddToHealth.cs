@@ -12,13 +12,14 @@ public class AddToHealth : MonoBehaviour
     {
         
     }
-
+    
     public void onTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            HealthBar.instance.AddHealth();
+            //playerBossCollision.instance.AddHealth(10);
             Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<playerBossCollision>().AddHealth(10);
         }
     }
 }

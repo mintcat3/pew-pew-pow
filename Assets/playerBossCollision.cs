@@ -11,11 +11,14 @@ public class playerBossCollision : MonoBehaviour
     public float startingHealth = 100;
     public float playerHealth;
     public Text pHealthText;
+
+    public static playerBossCollision instance;
+
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = startingHealth;
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -43,7 +46,13 @@ public class playerBossCollision : MonoBehaviour
                 
             // }
             playerDamage(10);
-
+        
+        }
+        if (collision.gameObject.name == "HealthPickUp")
+        {
+            //playerBossCollision.instance.AddHealth(10);
+            Destroy(GameObject.Find("HealthPickUp"));
+            AddHealth(50);
         }
     }
 
@@ -51,6 +60,12 @@ public class playerBossCollision : MonoBehaviour
     {
         playerHealth -= x;
 
+    }
+
+
+    public void AddHealth(float x)
+    {
+        playerHealth += x;
     }
 
 }
