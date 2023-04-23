@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Selector/Level Selection Menu.unity
+    guid: 6a5a2043d0f70964c8011664f45c0725
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level Selector/Beat Prev Level.unity
+    guid: a5e759f8c1586e146b7a431d076c129e
   m_configObjects: {}
