@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class KrahsHealth : MonoBehaviour
 { 
@@ -8,6 +10,7 @@ public class KrahsHealth : MonoBehaviour
     private float time = 0f;
     private float timeDeath = 0f;
     public float timeBeforeDeath2 = 5f;
+    public Text bHealthText;
     // Start is called before the first frame update
 
     public void TakeDamage(int Damage)
@@ -33,13 +36,18 @@ public class KrahsHealth : MonoBehaviour
     }
     void Update()
     {
+        // if (health <= 0)
+        // {
+        //      timeDeath += Time.deltaTime;
+        // }
+        // if (health >= 25)
+        // {
+        //     TakeDamage(1);
+        // }
+        bHealthText.text = ("Boss Health: " + health.ToString());
         if (health <= 0)
         {
-             timeDeath += Time.deltaTime;
-        }
-        if (health >= 25)
-        {
-            TakeDamage(1);
+            SceneManager.LoadScene("Level Selection Menu");
         }
     }
 }
