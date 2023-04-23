@@ -9,10 +9,22 @@ public class KrahsHealth : MonoBehaviour
     private float timeDeath = 0f;
     public float timeBeforeDeath2 = 5f;
     // Start is called before the first frame update
+    
+    
+    void Start()
+    {
+        gameObject.GetComponent<ParticleSystem>().Stop();
+    }
+    
     public void TakeDamage(int Damage)
     {
         health -= Damage; 
         
+        if (health <= (1/4) * health)
+        {
+            GetComponent<Animator>().SetBool("isEnraged", true);
+        }
+
         if (health <= 0)
         {
             GetComponent<Animator>().SetBool("isDead", true);
@@ -25,12 +37,12 @@ public class KrahsHealth : MonoBehaviour
            
         }
     }
-    // void Update()
-    // {
-    //     if (health <= 0)
-    //     {
-    //          timeDeath += Time.deltaTime;
-    //     }
-    //     TakeDamage(1);
-    // }
+    void Update()
+    {
+        if (health <= 0)
+        {
+             timeDeath += Time.deltaTime;
+        }
+        TakeDamage(1);
+    }
 }
