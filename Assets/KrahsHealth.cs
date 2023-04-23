@@ -14,10 +14,10 @@ public class KrahsHealth : MonoBehaviour
     {
         health -= Damage; 
         
-        // if (health <= 25) //25% of the boss health
-        // {
-        //     GetComponent<Animator>().SetBool("isEnraged", true);
-        // }
+        if (health <= 25) //25% of the boss health
+        {
+            GetComponent<Animator>().SetBool("isEnraged", true);
+        }
 
         if (health <= 0)
         {
@@ -31,12 +31,15 @@ public class KrahsHealth : MonoBehaviour
            
         }
     }
-    // void Update()
-    // {
-    //     if (health <= 0)
-    //     {
-    //          timeDeath += Time.deltaTime;
-    //     }
-    //     TakeDamage(1);
-    // }
+    void Update()
+    {
+        if (health <= 0)
+        {
+             timeDeath += Time.deltaTime;
+        }
+        if (health >= 25)
+        {
+            TakeDamage(1);
+        }
+    }
 }
