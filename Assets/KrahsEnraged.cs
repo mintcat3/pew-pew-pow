@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Krahs_Swim_x : StateMachineBehaviour
+public class KrahsEnraged : StateMachineBehaviour
 {
    Transform player;
    Rigidbody2D rigidbody;
    public float speed = 10f;
-    
+   GameObject Krahs;
+
+   
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-         player = GameObject.Find("Player").transform;
-         rigidbody = animator.GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player").transform;
+        rigidbody = animator.GetComponent<Rigidbody2D>();
+        GameObject.Find("krahs").GetComponent<ParticleSystem>().Play(); 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -43,3 +46,4 @@ public class Krahs_Swim_x : StateMachineBehaviour
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
 }
+
